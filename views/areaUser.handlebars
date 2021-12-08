@@ -1,0 +1,62 @@
+<main>
+  <section class="container-nav">
+    <nav class="nav">
+      <img src="img/logo-light.png" style="width: 50%;" class="mt-5" />
+      <div class="mt-5">
+        <img src="img/user.png" class=" mx-auto" style="width:148px;" />
+      </div>
+      <ul class="lista p-0 mt-5">
+        <li class="mb-3 no-hover">Bem-vindo {{nome}}</li>
+        <li> <a href="/user">Encontre seu médico</a></li>
+        <li><a href="/login">Sair</a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 mb-3 mx-auto mt-5">
+        <div class="input-group mb-3 mt-4 w-50 mx-auto">
+          <span
+            class="input-group-text inputS bg-light"
+            id="inputGroup-sizing-default"
+          ><i class="bi bi-search"></i></span>
+          <input
+            type="text"
+            class="form-control w-50 inputS mx-auto"
+            aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-default"
+            id="filtroCards"
+            onkeyup="aplicaFiltroCards()"
+            placeholder="Filtro..."
+          />
+        </div>
+      </div>
+      <br />
+    </div>
+    <div id="containerCards">
+      <div class="row d-flex justify-content-around">
+        {{#each resultado}}
+          <div class="col-3">
+            <div
+              class="card card-med mx-4 mt-5 text-center"
+              style="width: 16rem;"
+            >
+              <img
+                src="img/{{img}}"
+                style="width:90px;"
+                class="card-img-top mt-3 mx-auto"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">{{nome}}</h5>
+                <p class="card-text">{{especialidade}}</p>
+                <p class="card-text">CRM: {{crm}}</p>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</main>

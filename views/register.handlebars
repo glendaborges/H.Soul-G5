@@ -1,0 +1,155 @@
+<style>
+    body{
+    background: #F5F8FA;
+}
+i{
+    color: white;
+    font-size: 2.5rem;
+    margin-left: 10px;
+
+}
+
+.logoF{
+    height: 50px;
+    margin-right: 20px;
+}
+
+.red-box{
+    width: 100vw;
+    height: 15vh;
+    background: #E84A55;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 1.5rem;
+}
+
+
+.form-1{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    padding: 4.19rem 8.56rem;
+    background: #fff;
+    border-radius: 0.625rem;
+    max-width: 68vw;
+    margin: -8.75vh auto auto auto;
+    font: 400 0.875rem 'Poppins';
+}
+
+.form-1 h2{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #E63743;
+}
+
+hr{
+    opacity: 0.5;
+    margin-bottom: 3.125rem;
+}
+
+.formR{
+    display: flex;
+    flex-direction: column;
+}
+
+.formR label{
+    margin: 1.5rem 0 0.5rem;
+    color: #E67F7F;
+}
+
+.formR input, select{
+    height: 2.6rem;
+    border: 1px solid #D3E2E5;
+    background: #F5F8FA;
+    border-radius: 0.625rem;
+    padding: 0.625rem;
+    color: #4D6F80;
+    font-family: 'Poppins';
+}
+
+.formR option{
+    background: #F5F8FA;
+    border: none;
+}
+
+.formR input:focus, select:focus{
+    outline: 0;
+    border-bottom-color: #1FC673;
+    transition: 650ms;
+}
+.formR input:hover, select:hover{
+    border-bottom-color: #1FC673;
+    transition: 750ms;
+}
+
+
+.btnR{
+    display: flex;
+    width: 30vw;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.btnR button{
+    margin-top: 4rem;
+    width: 12vw;
+    height: 2.6rem;
+    border: none;
+    border-radius: 0.625rem;
+    font: 600 0.875rem 'Poppins';
+    color: #F5F8FA;
+}
+
+.canR{
+    background: #E61925;
+}
+.canR:hover{
+    background: #C61520;
+    cursor: pointer;
+}
+.envR{
+    background: #1FC673;
+}
+
+.envR:hover{
+    background: #15844C;
+    cursor: pointer;
+}
+.active-pink-2 input.form-control[type=text]:focus:not([readonly]) {
+    border-bottom: 1px solid #f48fb1;
+    box-shadow: 0 1px 0 0 #f48fb1;
+  }
+
+</style>
+
+<div class="red-box">
+            <a href="/adm"><i class="bi bi-arrow-left-square"></i></a>
+           
+</div>
+<div class="form-1">
+    <h2>Dados do Médico</h2>
+    <hr>
+    <form class="formR" action="/addMedico" method="post">
+        <label for="nome">Nome</label>
+        <input name="nome" value="{{resultado2.nome}}" id="nome" type="text" required>
+        <label for="crm">CRM</label>
+        <input name="crm" value="{{resultado2.crm}}" id="crm" type="number" required>
+        <label for="tel">Telefone</label>
+        <input name="tel" value="{{resultado2.tel}}" id="tel" type="text" required>
+        <label for="img">Foto</label>
+        <input name="img" value="{{resultado2.img}}" id="img" type="file" required>
+        <label for="">Especialidade</label>
+        <select name="especialidade" id="especialidade" required>
+            <option selected disabled>{{resultado2.especialidade}}</option>
+            {{#each resultado}}
+            <option value="{{especialidade}}">{{especialidade}}</option>
+            {{/each}}
+        </select>
+         <input type="hidden" name="id" value="{{resultado2._id}}">
+        <div class="btnR">
+            <button class="canR" type="reset">Cancelar</button>
+            <button class="envR" type="submit">Enviar</button>
+        </div>
+    </form>
+</div>

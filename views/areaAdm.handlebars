@@ -1,0 +1,57 @@
+
+
+<main>
+        <section class="container-nav">
+            <nav class="nav">
+                <img src="img/logo-light.png" style="width: 50%;" class="mt-5">
+                <div class="img">
+                    <img src="img/adm.png" class="mt-2 mx-1" style="width:140px;">
+                </div>
+                <ul class="lista p-0 mt-5">
+                    <li class="mb-3 no-hover">Administrador</li>
+                    <li><a href="/cadastro">Cadastro de Médico</a></li>
+                    <li> <a href="/adm">Lista de Médicos </a></li>
+                    <li><a href="/login">Sair</a></li>
+                </ul>
+            </nav>
+
+        </section>
+        <div class="container table-container w-75 my-auto">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>CRM</th>
+                        <th>Telefone</th>
+                        <th>Especialidade</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                {{#each resultado}}
+                <tbody>
+                    <tr>
+                        <td>
+                            {{nome}}
+                        </td>
+                        <td>
+                            {{crm}}
+                        </td>
+                        <td>
+                            {{tel}}
+                        </td>
+                        <td>
+                            {{especialidade}}
+                        </td>
+                        <td>
+                            <a href="/editarMedico/{{_id}}" class="btn btn-sm btn-warning"><i
+                                    class="bi bi-pencil-square"></i></a>
+                            <a href="/deletarMedico/{{_id}}" class="btn btn-sm btn-danger"><i
+                                    class="bi bi-x-circle"></i></a>
+                        </td>
+
+                    </tr>
+                </tbody>
+                {{/each}}
+            </table>
+        </div>
+    </main>

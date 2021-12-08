@@ -1,0 +1,23 @@
+<div class="login-container">
+  <img src="img/logo.png" alt="" />
+  <div class="login">
+    <h2>Login</h2>
+    <p>Digite seu login e senha</p>
+    <form action="/verificarLogin" method="post">
+      <div class="inpts-container">
+        <input
+          class="inpt"
+          name="email"
+          type="text"
+          placeholder="Nome de usuário"
+        />
+        <input class="inpt" name="senha" type="password" placeholder="Senha" />
+      </div>
+      <button class="etr mx-auto" type="submit" href="">Entrar</button>
+      <p class="text-center" style="color:#E63743;">
+          {{aparecer}}
+      </p>
+
+    </form>
+  </div>
+</div>
